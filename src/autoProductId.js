@@ -13,7 +13,7 @@ const getLastRecord = async seriesName => {
   const body = {
     app: APP_ID,
     query: `
-      ${productSeries} = "${seriesName}"
+      ${productSeries} in ("${seriesName}")
       order by ${createTime} limit 1
     `
   }
@@ -45,10 +45,10 @@ export const autoProductId = {
 
   handler: async event => {
     const { record } = event
-    const inputSeries = record[productSeries].value
-    const lastRecord = await getLastRecord(inputSeries)
+    const selectedSeries = record[productSeries].value
+    const lastRecord = await getLastRecord(selectedSeries)
     const newSeriesNum = autoNum(lastRecord)
-    const newProuctId = `${inputSeries}${newSeriesNum}`
+    const newProuctId = `${selectedSeries}${newSeriesNum}`
 
     record[seriesNum].value = newSeriesNum
     record[productId].value = newProuctId
