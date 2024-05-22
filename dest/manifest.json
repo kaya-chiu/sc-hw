@@ -1,0 +1,16 @@
+{
+  "app": "48",
+  "scope": "ALL",
+  "desktop": {
+    "js": [
+      "dest/bundle.js"
+    ],
+    "css": []
+  },
+  "mobile": {
+    "js": [
+      "dest/bundle.js"
+    ],
+    "css": []
+  }
+}
