@@ -1,11 +1,10 @@
+import { disabledAll } from './disabledField'
+import { autoProductId } from './autoProductId'
 
 (() => {
   'use strict'
 	
-  kintone.events.on('app.record.index.show', event => {
-    console.log('Hello kintone!')
-    
-    return event
-  })
+  kintone.events.on(disabledAll.events, disabledAll.handler)
+  kintone.events.on(autoProductId.events, autoProductId.handler)
   
 })()
