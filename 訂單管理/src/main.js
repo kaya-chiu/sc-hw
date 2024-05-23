@@ -1,9 +1,9 @@
-import { seriesDropdown } from './seriesDropdown'
+import { productSearch } from './productSearch'
 
 (() => {
   'use strict'
   const Kuc = Kucs['1.17.0']
 
-  kintone.events.on(seriesDropdown.events, seriesDropdown.handler)
+  kintone.events.on(productSearch.events, productSearch.handler)
   
 })()
