@@ -49,6 +49,7 @@ const autoId = record => {
   return newId
 }
 
+// ** MAIN FUNCTION **
 export const autoOrderId = {
   events: [
     'app.record.create.submit',

@@ -1,5 +1,6 @@
 import { addToList } from './addToList'
 import { autoOrderId } from './autoOrderId'
+import { disabledAll } from './disabledField'
 import { hideProductSearch } from './hideProductSearch'
 import { productSearch } from './productSearch'
 
@@ -7,6 +8,7 @@ import { productSearch } from './productSearch'
   'use strict'
   const Kuc = Kucs['1.17.0']
 
+  kintone.events.on(disabledAll.events, disabledAll.handler)
   kintone.events.on(productSearch.events, productSearch.handler)
   kintone.events.on(addToList.events, addToList.handler)
   kintone.events.on(hideProductSearch.events, hideProductSearch.handler)
