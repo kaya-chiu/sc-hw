@@ -1,0 +1,20 @@
+{
+  "app": "49",
+  "scope": "ALL",
+  "desktop": {
+    "js": [
+      "src/umd/kuc.min.js",
+      "dest/bundle.js"
+    ],
+    "css": [
+      "src/css/kuc-style-adjust.css"
+    ]
+  },
+  "mobile": {
+    "js": [
+      "src/umd/kuc.min.js",
+      "dest/bundle.js"
+    ],
+    "css": []
+  }
+}

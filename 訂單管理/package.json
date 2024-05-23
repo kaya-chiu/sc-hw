@@ -1,0 +1,25 @@
+{
+  "name": "訂單管理",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix \"src/**/*.js\"",
+    "update": "npx webpack && source .env && kintone-customize-uploader dest/manifest.json --base-url $KINTONE_BASE_URL --username $KINTONE_USERNAME --password $KINTONE_PASSWORD"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@kintone/customize-uploader": "^8.0.11",
+    "@stylistic/eslint-plugin-js": "^1.8.0",
+    "eslint": "^8.57.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "kchelper": "^0.1.2",
+    "kintone-ui-component": "^1.17.0"
+  }
+}
