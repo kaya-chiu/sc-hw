@@ -19,6 +19,6 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "kchelper": "^0.1.1"
+    "kchelper": "^1.0.1"
   }
 }

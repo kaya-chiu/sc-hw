@@ -1,4 +1,5 @@
-import { getSpaceElement } from 'kchelper'
+// import { getSpaceElement } from 'kchelper'
+import { isMobile, hideField, getSpaceElement, getRecord, setRecord } from 'kchelper'
 
 const spaceId = 'add-btn'
 const fieldCode = {
@@ -28,11 +29,10 @@ export const addToList = {
   handler: event => {
     try {
       // 隱藏 lookup 帶入用的「商品型號」欄位
-      kintone.app.record.setFieldShown(fieldCode.productId, false)
-      kintone.mobile.app.record.setFieldShown(fieldCode.productId, false)
+      hideField(fieldCode.productId, isMobile(event))
 
       // 建立「新增按鈕」
-      const space = getSpaceElement(event, spaceId)
+      const space = getSpaceElement(spaceId, isMobile(event))
       const addButton = new Kuc.Button({
         text: 'Add',
         type: 'submit',
@@ -43,7 +43,7 @@ export const addToList = {
       // 「新增按鈕」點擊事件
       addButton.addEventListener('click', e => {
         // 取得欄位資訊
-        const record = kintone.app.record.get().record
+        const record = getRecord(isMobile(event))
         const productId = record[fieldCode.productId]
         const productName = record[fieldCode.productName]
         const price = record[fieldCode.price]
@@ -89,7 +89,7 @@ export const addToList = {
 
         // 新增表格資料
         record[fieldCode.table].value.push(listItem)
-        kintone.app.record.set({ record })
+        setRecord(record, isMobile(event))
       })
       return event
       

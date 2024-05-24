@@ -1,4 +1,4 @@
-import { getSpaceElement } from 'kchelper'
+import { getSpaceElement, isMobile } from 'kchelper'
 import { generateDropdownConfig, getFieldValueArray, getRecords } from './utils'
 
 const fieldCode = {
@@ -39,8 +39,8 @@ export const productSearch = {
       const seriesDropdownConfig = generateDropdownConfig(seriesNames, '選擇商品系列')
       const SeriesDropdown = new Kuc.Dropdown(seriesDropdownConfig)
       
-      const space1 = getSpaceElement(event, spaceId.series)
-      const space2 = getSpaceElement(event, spaceId.productId)
+      const space1 = getSpaceElement(spaceId.series, isMobile(event))
+      const space2 = getSpaceElement(spaceId.productId, isMobile(event))
 
       space1.appendChild(SeriesDropdown)
 

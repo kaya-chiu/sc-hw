@@ -1,3 +1,5 @@
+import { hideField, isMobile } from 'kchelper'
+
 const fieldCodes = [
   '商品名稱',
   '商品型號',
@@ -14,8 +16,7 @@ export const hideProductSearch = {
 
   handler: event => {
     fieldCodes.forEach(fieldCode => {
-      kintone.app.record.setFieldShown(fieldCode, false)
-      kintone.mobile.app.record.setFieldShown(fieldCode, false)
+      hideField(fieldCode, isMobile(event))
     })
     return event
   }
