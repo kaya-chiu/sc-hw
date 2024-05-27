@@ -1,5 +1,3 @@
-// ** MAIN FUNCTION **
-
 // ** 新增、編輯時皆 disabled
 export const disabledAll = {
   events: [
@@ -13,7 +11,8 @@ export const disabledAll = {
   handler: event => {
     const fieldCodes = [
       '商品型號',
-      '系列序號'
+      '系列序號',
+      '原商品系列'
     ]
 
     fieldCodes.forEach(fieldCode => {
